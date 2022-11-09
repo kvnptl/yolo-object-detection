@@ -1,2 +1,3 @@
-# yolov5
-This is a yolov5 objecct detection repo for b-it-bot @work lab. 
+# Yolov5 training
+
+- contains dataset, some inference images, jupyter notebook for training and inferencing
