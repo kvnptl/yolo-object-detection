@@ -1,5 +1,5 @@
-train: ../dataset_ss22_v4/train/images
-val: ../dataset_ss22_v4/valid/images
+train: dataset_ss22_v4/train/images
+val: dataset_ss22_v4/valid/images
 
 nc: 20
 
