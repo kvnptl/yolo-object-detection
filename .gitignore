@@ -11,3 +11,8 @@ inference_images.zip
 .ipynb_checkpoints/
 dataset_ss22_v4_yolov7.zip
 dataset_ss22_v4_yolov7/
+*.pt
+logs
+test_imgs
+yolov8/runs
+yolov8/yolov8_ss22_v4
