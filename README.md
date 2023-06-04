@@ -1,4 +1,4 @@
-# YOLOv5 or YOLOv7 ot YOLOv8 training for object detection on a custom dataset
+# YOLOv5/YOLOv7/YOLOv8 training for object detection on a custom dataset
 
 - Contains jupyter notebook for training and inferencing
 - Visualize dataset
