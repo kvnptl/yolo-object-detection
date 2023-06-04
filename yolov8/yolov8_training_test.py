@@ -20,16 +20,19 @@ Tunable parameters:
 
 from ultralytics import YOLO
 
-# Inputs and Hyperparameters for training
-pretrained_model = "yolov8s.pt" # default is yolov8s.pt
-config_file = "/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/yolov8/yolov8_config_ss22.yaml"
-data_yaml = "/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/dataset_ss22_v4.yaml"
-epochs = 5
+# Inputs
+pretrained_model = 'yolov8s.pt' # default is yolov8n.pt
+config_file = "/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/yolov8/yolov8_config_robocup_2023.yaml"
+data_yaml = "/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/robocup_2023_dataset_308_461/dataset.yaml"
+
+# Hyperparameters
+epochs = 10
 image_size = 640
-batch_size = 128 # (-1 for AutoBatch, works only for single GPU)
-project_name = "yolov8_ss22_v4"
-model_name = "test_" # results are saved in runs/train
-cuda_devices = '0,1' # GPU devices ids 
+batch_size = 64 # (-1 for AutoBatch, works only for single GPU)
+project_name = "yolov8_robocup_2023/train" # save training results to <project-name>/train
+file_name = os.path.basename(os.path.splitext(pretrained_model)[0])
+model_name = f"{file_name}_epoch{epochs}_" if file_name != 'best' else f"{pretrained_model.split('/')[-3]}_epoch{epochs}_"
+cuda_devices = '0' # GPU devices ids 
 freeze_layers = 10 # number of layers to freeze (from the beginning)
 
 def freeze_layer(trainer):

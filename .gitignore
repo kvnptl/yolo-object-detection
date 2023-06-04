@@ -12,7 +12,11 @@ inference_images.zip
 dataset_ss22_v4_yolov7.zip
 dataset_ss22_v4_yolov7/
 *.pt
+*.zip
 logs
 test_imgs
 yolov8/runs
 yolov8/yolov8_ss22_v4
+test_images_robocup_2023
+robocup_2023_dataset_308_461
+yolov8/yolov8_robocup_2023
