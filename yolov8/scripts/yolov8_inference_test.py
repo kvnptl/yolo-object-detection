@@ -24,7 +24,7 @@ from ultralytics import YOLO
 pretrained_model = "/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/yolov8/yolov8_robocup_2023/yolov8s_308_461_epoch1000/weights/best.pt" # default is yolov8n.pt
 config_file = "/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/yolov8/yolov8_config_robocup_2023.yaml"
 data_yaml = "/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/robocup_2023_dataset_308_461/dataset.yaml"
-test_images_dir = "/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/test_images_robocup_2023"
+test_images_dir = "/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/datasets/test_images_robocup_2023"
 image_size = 640
 confidence_threshold = 0.45
 iou_threshold = 0.45
