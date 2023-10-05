@@ -8,7 +8,7 @@ Source: https://github.com/ultralytics/ultralytics
 from ultralytics import YOLO
 
 # Inputs and Hyperparameters for training
-pretrained_model = "/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/yolov8/yolov8_robocup_2023/yolov8s_308_461_epoch1000/weights/best.pt" # default is yolov8n.pt
+pretrained_model = "/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/yolov8/yolov8_robocup_2023/train/yolov8s_epoch3000_dataset_ver12/weights/best.pt" # default is yolov8n.pt
 
 # Load a model
 model = YOLO(pretrained_model)  # load a pretrained model (recommended for training)

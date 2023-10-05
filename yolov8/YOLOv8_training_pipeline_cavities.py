@@ -108,7 +108,7 @@ from ultralytics import YOLO
 
 
 # dataset.yaml file
-data_yaml = "/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/datasets/robocup_2023_dataset/dataset.yaml"
+data_yaml = "/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/datasets/cavities_dataset/dataset.yaml"
 
 
 # In[ ]:
@@ -254,19 +254,17 @@ def plot(image_paths, label_paths, num_samples):
 
 
 # Inputs
-pretrained_model = "/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/yolov8/yolov8_robocup_2023/train/yolov8s_epoch3000_dataset_ver13_old/weights/best.pt" # default is yolov8n.pt
-config_file = "/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/yolov8/config/yolov8_config_robocup_2023.yaml"
-data_yaml = "/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/datasets/robocup_2023_dataset_v13/dataset.yaml"
+pretrained_model = 'yolov8s' # default is yolov8n.pt
+config_file = "/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/yolov8/config/yolov8_config_cavities.yaml"
+data_yaml = "/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/datasets/cavities_dataset/dataset.yaml"
 
 # Hyperparameters
-epochs = 1000
+epochs = 3000
 image_size = 640
 batch_size = 128 # (-1 for AutoBatch, works only for single GPU)
-project_name = "yolov8_robocup_2023/train" # save training results to <project-name>/train
+project_name = "yolov8_cavities/train" # save training results to <project-name>/train
 file_name = os.path.basename(os.path.splitext(pretrained_model)[0])
-# model_name = f"{file_name}_epoch{epochs}_" if file_name != 'best' else f"{pretrained_model.split('/')[-3]}_epoch{epochs}_atwork_n_container_"
-# model_name = f"yolov8s_epoch{epochs}_dataset_ver4"
-model_name = f"yolov8s_epoch{epochs}_dataset_ver13"
+model_name = f"{file_name}_epoch{epochs}_" if file_name != 'best' else f"{pretrained_model.split('/')[-3]}_epoch{epochs}_"
 cuda_devices = '0,1' # GPU devices ids 
 freeze_layers = 10 # number of layers to freeze (from the beginning)
 
@@ -450,14 +448,14 @@ def visualize(INFER_DIR):
 # In[ ]:
 
 
-on_single_image = True
+on_single_image = False
 
 if on_single_image:
     # Inference on single image
-    IMAGE_INFER_DIR = inference(RESULT_DIR, '/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/datasets/test_images_robocup_2023/set2_frame00000.png')
+    IMAGE_INFER_DIR = inference(RESULT_DIR, '/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/datasets/test_images_cavities/frame0000_jpg.rf.b10869bfbcaf09da668f6674668bb5dd.jpg')
 else:
     # Inference on images.
-    IMAGE_INFER_DIR = inference(RESULT_DIR, '/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/datasets/test_images_robocup_2023')
+    IMAGE_INFER_DIR = inference(RESULT_DIR, '/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/datasets/test_images_cavities')
 
 
 # In[ ]:
