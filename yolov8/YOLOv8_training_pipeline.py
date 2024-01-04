@@ -108,7 +108,7 @@ from ultralytics import YOLO
 
 
 # dataset.yaml file
-data_yaml = "/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/datasets/robocup_2023_dataset/dataset.yaml"
+data_yaml = "/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/datasets/robocup_2023_dataset_v13_paper/dataset.yaml"
 
 
 # In[ ]:
@@ -254,9 +254,9 @@ def plot(image_paths, label_paths, num_samples):
 
 
 # Inputs
-pretrained_model = "/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/yolov8/yolov8_robocup_2023/train/yolov8s_epoch3000_dataset_ver13_old/weights/best.pt" # default is yolov8n.pt
+pretrained_model = "yolov8n.pt" # default is yolov8n.pt
 config_file = "/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/yolov8/config/yolov8_config_robocup_2023.yaml"
-data_yaml = "/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/datasets/robocup_2023_dataset_v13/dataset.yaml"
+data_yaml = "/home/kpatel2s/kpatel2s/b_it_bots/2d_object_detection/yolo-object-detection/datasets/robocup_2023_dataset_v13_paper/dataset.yaml"
 
 # Hyperparameters
 epochs = 1000
@@ -266,7 +266,7 @@ project_name = "yolov8_robocup_2023/train" # save training results to <project-n
 file_name = os.path.basename(os.path.splitext(pretrained_model)[0])
 # model_name = f"{file_name}_epoch{epochs}_" if file_name != 'best' else f"{pretrained_model.split('/')[-3]}_epoch{epochs}_atwork_n_container_"
 # model_name = f"yolov8s_epoch{epochs}_dataset_ver4"
-model_name = f"yolov8s_epoch{epochs}_dataset_ver13"
+model_name = f"yolov8s_epoch{epochs}_dataset_ver13_paper"
 cuda_devices = '0,1' # GPU devices ids 
 freeze_layers = 10 # number of layers to freeze (from the beginning)
 
